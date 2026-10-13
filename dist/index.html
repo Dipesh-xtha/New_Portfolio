@@ -159,19 +159,72 @@
     @media(max-width:760px){.approach{height:155vh;min-height:830px;margin-bottom:52px}.approach__layout{top:6vh}.approach__card{padding-right:72px}.approach__card p{padding-right:0}}
     @media(max-width:560px){.work-gallery{margin-bottom:57px}.approach{height:145vh;min-height:760px;margin-bottom:50px}.approach__card{padding:18px 55px 18px 18px}.approach__card h3{font-size:1.4rem}.approach__card p{font-size:12px}.approach__plus{top:19px;right:16px;width:38px;height:38px}.approach__detail{font-size:11px;margin-top:8px;padding-top:7px;padding-right:0}.approach__detail strong{font-size:9px}.about-intro{padding-top:52px;padding-bottom:37px}.behind{margin-top:0}.contact-cta{margin-top:54px}.tool-glyph{height:24px;transform-origin:50% 55%}.tool-glyph img{width:67.37px!important;height:24px!important}.tool-glyph--t{width:18px}.tool-glyph--nut{width:19px}.tool-glyph--nut img{left:-18px}.tool-glyph--gear{width:20px}.tool-glyph--gear img{left:-37px}.tool-glyph--l{width:9px}.tool-glyph--l img{left:-58px}}
     @media(prefers-reduced-motion:reduce){.approach{height:auto;min-height:0}.approach__card{transform:none!important}.hero__line img,.tool-glyph,.approach__plus{transition:none!important}}
+    /* Compact looping toolkit, using only verified first-party logo assets. */
+    .about-intro .toolkit{min-width:0;overflow:hidden}
+    .toolkit-top__meta{display:flex;align-items:center;gap:10px;white-space:nowrap}
+    .tool-marquee__toggle{min-height:30px;padding:4px 9px;border:1px solid #d2c3e7;border-radius:999px;background:rgba(255,255,255,.66);color:#5b3cc0;font:700 10px/1 Inter,Arial,sans-serif;cursor:pointer}
+    .tool-marquee__toggle:hover{background:#eee8ff}.tool-marquee__toggle:focus-visible{outline:3px solid #6848d9;outline-offset:2px}
+    .tool-marquee{position:relative;min-width:0;border-block:1px solid rgba(101,73,151,.18);background:rgba(255,255,255,.18)}
+    .tool-marquee:before,.tool-marquee:after{content:'';position:absolute;z-index:2;top:0;bottom:0;width:42px;pointer-events:none}
+    .tool-marquee:before{left:0;background:linear-gradient(90deg,#f8eee5,rgba(248,238,229,0))}.tool-marquee:after{right:0;background:linear-gradient(270deg,#f8eee5,rgba(248,238,229,0))}
+    .tool-marquee__viewport{overflow:hidden;padding:10px 0}.tool-marquee__track{display:flex;width:max-content;will-change:transform}
+    .about-intro .tool-list{display:flex;flex:none;align-items:center;gap:10px;width:max-content;margin:0;padding:0 10px 0 0;list-style:none}
+    .about-intro .tool-list li{flex:none;min-width:max-content;min-height:40px;padding:7px 14px 7px 9px;border:1px solid #d7cbea;border-radius:999px;background:rgba(255,255,255,.82);box-shadow:0 3px 10px rgba(64,43,83,.045);font-size:13px;font-weight:700}
+    .about-intro .tool-logo{width:26px;height:26px;flex:0 0 26px;object-fit:contain;object-position:center}
+    .about-intro .tool-logo[src$="logo-figma.png"]{transform:scale(1.55)}
+    /* Open card field first; scrolling gathers the three principles into a stack. */
+    .approach{height:210vh;min-height:1180px}
+    .approach__layout{align-items:start}
+    .approach__deck{height:610px;padding:10px;margin:-10px;overflow:visible;isolation:isolate}
+    .approach__card{inset:10px 10px auto;height:170px;min-height:170px;--card-y:0px;--card-r:0deg;--card-scale:1;transform:translate3d(0,var(--card-y),0) rotate(var(--card-r)) scale(var(--card-scale));transform-origin:50% 50%;justify-content:center;border-color:#7655d2;background:#fffdfb;box-shadow:0 9px 22px rgba(42,33,48,.09)}
+    .approach__card.is-expanded>p{display:block}
+    .approach__card.is-expanded .approach__detail{margin-top:20px;padding:16px 0 0}
+    .approach.has-expanded{height:auto;min-height:0;padding-bottom:clamp(50px,6vw,76px)}
+    .approach.has-expanded .approach__layout{position:relative;top:auto}
+    .approach.has-expanded .approach__deck{height:auto;display:grid;gap:42px;overflow:visible}
+    .approach.has-expanded .approach__card{position:relative;inset:auto;height:auto;min-height:170px;transform:rotate(var(--open-r))!important;will-change:auto;justify-content:flex-start;padding-block:31px}
+    .approach.has-expanded .approach__card:first-child{--open-r:-1.25deg}
+    .approach.has-expanded .approach__card:nth-child(2){--open-r:2.4deg}
+    .approach.has-expanded .approach__card:nth-child(3){--open-r:-2.25deg}
+    .approach.has-expanded .approach__card.is-expanded{min-height:265px}
+    .approach.has-expanded .approach__card p{padding-right:55px}
+    .approach__detail{display:block;max-width:none;padding:16px 0 0;border-top:1px solid #ddcfe7}
+    .approach__detail[hidden]{display:none}
+    .approach__detail .approach__applied{display:block;max-width:58ch;color:#463d50;font-size:14px;font-weight:600;line-height:1.5}
+    .approach__detail .approach__case-link{display:inline-flex;align-items:center;gap:7px;min-height:40px;margin-top:11px;color:#5834bb;font-size:13px;font-weight:800;text-decoration:none}
+    .approach__detail .approach__case-link:hover{text-decoration:underline;text-underline-offset:4px}
+    .approach__detail .approach__case-link svg{width:16px;height:16px}
+    .approach__card:first-child{--card-y:0px;--card-r:-1.25deg}
+    .approach__card:nth-child(2){background:#f4f0ff}.approach__card:nth-child(3){background:#fff8f1}
+    .approach__counter{display:none}
+    @media(max-width:760px){.approach{height:205vh;min-height:1080px}.approach__layout{top:18px}.approach__deck{height:515px;padding:8px;margin:-8px}.approach__card{inset:8px 7px auto;height:154px;min-height:154px;padding:19px 62px 19px 21px}.approach__card h3{margin:10px 0 7px}}
+    @media(max-width:560px){.toolkit-top{align-items:center}.toolkit-top__meta>span{display:none}.tool-marquee__toggle{min-height:28px}.tool-marquee:before,.tool-marquee:after{width:27px}.about-intro .tool-list li{min-height:38px;font-size:12px;padding-right:12px}.approach{height:205vh;min-height:1080px}.approach__deck{height:485px}.approach__card{height:145px;min-height:145px;padding:17px 52px 17px 18px}.approach__card h3{font-size:1.35rem;margin:8px 0 6px}.approach__card p{font-size:12px;line-height:1.38;max-width:34ch}.approach__meta img{width:20px;height:20px}.approach__plus{top:16px;right:14px;width:35px;height:35px}}
+    @media(max-width:760px){.approach.has-expanded{height:auto;min-height:0}.approach.has-expanded .approach__deck{height:auto;gap:35px}.approach.has-expanded .approach__card{height:auto;min-height:154px;padding:23px 62px 23px 21px}.approach.has-expanded .approach__card.is-expanded{min-height:255px}.approach.has-expanded .approach__card p{padding-right:0}}
+    @media(max-width:560px){.approach.has-expanded .approach__deck{height:auto;gap:32px}.approach.has-expanded .approach__card{height:auto;min-height:145px;padding:23px 52px 23px 18px}.approach.has-expanded .approach__card.is-expanded{min-height:235px}.approach__detail .approach__applied{font-size:12px}.approach__detail .approach__case-link{font-size:12px}}
+    @media(prefers-reduced-motion:reduce){.tool-marquee__viewport{overflow-x:auto}.tool-marquee__track{transform:none!important}.tool-marquee__toggle{display:none}.approach{height:auto;min-height:0}.approach__layout{position:static;display:block}.approach__deck{height:auto;display:grid;gap:16px;overflow:visible;margin:22px 0 0;padding:0}.approach__card{position:relative;inset:auto;height:auto;min-height:170px;transform:none!important}.approach__card.is-expanded{min-height:170px}}
+  .work-card__link svg,.page-footer__links svg{width:17px;height:17px;flex:none;margin-left:5px;transition:transform .2s ease}.work-card__link:hover svg,.page-footer__links a:hover svg{transform:translate(2px,-2px)}
+    /* Personal photos retain their own proportions; the edge echoes the canvas stroke. */
+    .off-clock .image-loop{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+    .off-clock .image-loop__viewport{padding:3px 0 5px;border-radius:0;mask-image:none}
+    .off-clock .image-loop__set{align-items:center;gap:14px;padding-right:14px}
+    .off-clock .image-loop__slide{position:relative;display:block;flex:none;width:max-content;height:auto;margin:0;overflow:visible;border-radius:0;background:transparent}
+    .off-clock .image-loop__slide img{display:block;width:auto;height:clamp(175px,19vw,225px);max-width:none;object-fit:contain;border-radius:11px}
+    .off-clock .image-loop__slide:after{content:'';position:absolute;inset:0;z-index:1;border:12px solid transparent;border-image:url('assets/photo-wave.svg') 10 / 12px / 0 stretch;background:none;pointer-events:none}
+    .off-clock .image-loop__footer{justify-content:flex-end;padding:7px 0 0}
+    @media(max-width:700px){.off-clock .image-loop__slide img{height:clamp(160px,36vw,205px)}.off-clock .image-loop__set{gap:10px;padding-right:10px}}
   </style>
 </head>
 <body>
   <div class="page">
     <header class="site-nav" id="top"><div class="site-nav__inner"><a class="site-nav__brand" href="#top" aria-label="Dipesh Shrestha — back to top"><img src="assets/nav-logo.png" alt="Dipesh Shrestha"></a><button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-nav-toggle>Menu <span aria-hidden="true">☰</span></button><nav class="site-nav__links" id="site-menu" aria-label="Main navigation"><a href="#work">Work</a><a href="#about-intro">About</a><a href="mailto:dipeshshresthaa70@gmail.com?subject=Resume%20request" title="Request Dipesh's resume by email">Resume</a><a href="#contact">Contact</a></nav></div></header>
     <section class="hero" aria-labelledby="hero-heading"><img class="hero__portrait" src="assets/hero-portrait.png" alt="" aria-hidden="true"><div class="hero__inner"><div class="hero__copy"><span class="hero__tag">Dipesh Shrestha · Product Designer</span><h1 id="hero-heading" aria-label="Clarity and Purpose"><span class="hero__line">Clarity <img src="assets/hero-frame-icon.png" alt="" aria-hidden="true"><i>&amp;</i></span><span class="hero__line hero__line--purpose">Purpose <img src="assets/hero-pencil-icon.png" alt="" aria-hidden="true"><b>.</b></span></h1><p>Crafting meticulous, user-centered digital experiences that balance aesthetic elegance with rigorous functionality.</p><a class="hero__jump" href="#work">Selected work <span aria-hidden="true"></span></a></div></div></section>
-    <main><section class="work-gallery" id="work" aria-labelledby="work-heading"><img class="work-gallery__shape" src="assets/work-border-one.svg" alt="" aria-hidden="true"><img class="work-gallery__stroke" src="assets/work-border-two.svg" alt="" aria-hidden="true"><div class="work-gallery__content"><h2 id="work-heading">Work gallery</h2><article class="work-card work-card--featured"><div class="work-card__media"><img src="assets/work-feature.png" alt="BugV enterprise security website redesign displayed on a laptop" loading="lazy"><span class="work-card__featured">Featured case study</span></div><div class="work-card__details"><div><div class="work-tags"><span>B2B SaaS</span><span>Research &amp; strategy</span><span>Website redesign</span></div><h3>BugV — clarity for two audiences.</h3><p>Reshaping a cybersecurity website around enterprise buyers and security researchers.</p></div><a class="work-card__link" href="#contact" aria-label="Ask Dipesh about the BugV case study">Ask about this work ↗</a></div></article><div class="work-gallery__grid"><article class="work-card"><div class="work-card__media work-card__media--small"><img class="work-card__background" src="assets/work-kyc-background.png" alt="" aria-hidden="true" loading="lazy"><img class="work-card__foreground work-card__foreground--kyc" src="assets/work-kyc-foreground.png" alt="BugV KYC verification form with step-by-step progress" loading="lazy"></div><div class="work-tags"><span>KYC Verification</span><span>Product Design</span></div><h3>Making verification easier to complete.</h3><p>Transforming a long form into a guided four-step flow with clear progress, feedback, and recovery.</p><a class="work-card__link" href="#contact" aria-label="Ask Dipesh about the KYC case study">Ask about this work ↗</a></article><article class="work-card"><div class="work-card__media work-card__media--small"><img class="work-card__background" src="assets/work-b2b-background.png" alt="" aria-hidden="true" loading="lazy"><img class="work-card__foreground work-card__foreground--b2b" src="assets/work-b2b-foreground.png" alt="BugV dashboards and workflow screens" loading="lazy"></div><div class="work-tags"><span>B2B SaaS</span><span>Product Design</span><span>Workflow Design</span></div><h3>Simplifying everyday B2B workflows.</h3><p>Designing clearer dashboards, submission flows, data tables, and integrations for faster operational decisions.</p><a class="work-card__link" href="#contact" aria-label="Ask Dipesh about the B2B workflow case study">Ask about this work ↗</a></article></div></div></section><section class="approach" id="approach" aria-labelledby="approach-heading" data-approach>
+    <main><section class="work-gallery" id="work" aria-labelledby="work-heading"><img class="work-gallery__shape" src="assets/work-border-one.svg" alt="" aria-hidden="true"><img class="work-gallery__stroke" src="assets/work-border-two.svg" alt="" aria-hidden="true"><div class="work-gallery__content"><h2 id="work-heading">Work gallery</h2><article class="work-card work-card--featured"><div class="work-card__media"><img src="assets/work-feature.png" alt="Bugv enterprise security website redesign displayed on a laptop" loading="lazy"><span class="work-card__featured">Featured case study</span></div><div class="work-card__details"><div><div class="work-tags"><span>B2B SaaS</span><span>Research &amp; strategy</span><span>Website redesign</span></div><h3>Bugv — clarity for two audiences.</h3><p>Reshaping a cybersecurity website around enterprise buyers and security researchers.</p></div><a class="work-card__link" href="case-study.html?project=website" aria-label="Read the Bugv website redesign case study">View case study <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article><div class="work-gallery__grid"><article class="work-card"><div class="work-card__media work-card__media--small"><img class="work-card__background" src="assets/work-kyc-background.png" alt="" aria-hidden="true" loading="lazy"><img class="work-card__foreground work-card__foreground--kyc" src="assets/work-kyc-foreground.png" alt="Bugv KYC verification form with step-by-step progress" loading="lazy"></div><div class="work-tags"><span>KYC Verification</span><span>Product Design</span></div><h3>Making verification easier to complete.</h3><p>Transforming a long form into a guided four-step flow with clear progress, feedback, and recovery.</p><a class="work-card__link" href="case-study.html?project=kyc" aria-label="Read the Bugv KYC redesign case study">View case study <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article><article class="work-card"><div class="work-card__media work-card__media--small"><img class="work-card__background" src="assets/work-b2b-background.png" alt="" aria-hidden="true" loading="lazy"><img class="work-card__foreground work-card__foreground--b2b" src="assets/work-b2b-foreground.png" alt="Bugv dashboards and workflow screens" loading="lazy"></div><div class="work-tags"><span>B2B SaaS</span><span>Product Design</span><span>Workflow Design</span></div><h3>Simplifying everyday B2B workflows.</h3><p>Designing clearer dashboards, submission flows, data tables, and integrations for faster operational decisions.</p><a class="work-card__link" href="case-study.html?project=product" aria-label="View selected Bugv product interfaces">View case study <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article></div></div></section><section class="approach" id="approach" aria-labelledby="approach-heading" data-approach>
       <div class="approach__layout">
         <div class="approach__intro"><div class="eyebrow">My design approach</div><h2 id="approach-heading">How I <em>approach</em><br> product design.</h2><p>Three principles that guide how I simplify problems, build systems and shape product experiences.</p><span class="approach__hint">Scroll to explore <span aria-hidden="true">↓</span></span></div>
         <div class="approach__deck" aria-label="Three product design principles">
-          <article class="approach__card" data-approach-card><div class="approach__meta"><span>01</span><img src="assets/approach-clarity.svg" alt="" aria-hidden="true"></div><h3>Clarity in complexity</h3><p>Simplifying dense workflows and information into focused, understandable experiences.</p><button class="approach__plus" type="button" aria-label="Expand Clarity in complexity" aria-expanded="false" aria-controls="approach-detail-1" data-approach-expand>+</button><div class="approach__detail" id="approach-detail-1" hidden><strong>In practice</strong><span>Make the next decision, status, and recovery path obvious in a complex flow.</span></div></article>
-          <article class="approach__card" data-approach-card><div class="approach__meta"><span>02</span><img src="assets/approach-systems.svg" alt="" aria-hidden="true"></div><h3>Systems that scale</h3><p>Creating reusable components and patterns that keep products consistent as they grow.</p><button class="approach__plus" type="button" aria-label="Expand Systems that scale" aria-expanded="false" aria-controls="approach-detail-2" data-approach-expand>+</button><div class="approach__detail" id="approach-detail-2" hidden><strong>In practice</strong><span>Build shared components and patterns that stay consistent across product screens.</span></div></article>
-          <article class="approach__card" data-approach-card><div class="approach__meta"><span>03</span><img src="assets/approach-purpose.svg" alt="" aria-hidden="true"></div><h3>Purposeful interaction</h3><p>Designing feedback, recovery paths and states that help users move confidently.</p><button class="approach__plus" type="button" aria-label="Expand Purposeful interaction" aria-expanded="false" aria-controls="approach-detail-3" data-approach-expand>+</button><div class="approach__detail" id="approach-detail-3" hidden><strong>In practice</strong><span>Design the loading, error, success, and second-try moments alongside the ideal path.</span></div></article>
+          <article class="approach__card" data-approach-card><div class="approach__meta"><span>01</span><img src="assets/approach-clarity.svg" alt="" aria-hidden="true"></div><h3>Clarity in complexity</h3><p>Simplifying dense workflows and information into focused, understandable experiences.</p><button class="approach__plus" type="button" aria-label="Expand Clarity in complexity" aria-expanded="false" aria-controls="approach-detail-1" data-approach-expand>+</button><div class="approach__detail" id="approach-detail-1" hidden><span class="approach__applied">Applied in: KYC verification redesign</span><a class="approach__case-link" href="case-study.html?project=kyc">View KYC case study <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
+          <article class="approach__card" data-approach-card><div class="approach__meta"><span>02</span><img src="assets/approach-systems.svg" alt="" aria-hidden="true"></div><h3>Systems that scale</h3><p>Creating reusable components and patterns that keep products consistent as they grow.</p><button class="approach__plus" type="button" aria-label="Expand Systems that scale" aria-expanded="false" aria-controls="approach-detail-2" data-approach-expand>+</button><div class="approach__detail" id="approach-detail-2" hidden><span class="approach__applied">Applied in: Bugv dashboards, tables and operational workflows</span><a class="approach__case-link" href="case-study.html?project=product">View additional product work <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
+          <article class="approach__card" data-approach-card><div class="approach__meta"><span>03</span><img src="assets/approach-purpose.svg" alt="" aria-hidden="true"></div><h3>Purposeful interaction</h3><p>Designing feedback, recovery paths and states that help users move confidently.</p><button class="approach__plus" type="button" aria-label="Expand Purposeful interaction" aria-expanded="false" aria-controls="approach-detail-3" data-approach-expand>+</button><div class="approach__detail" id="approach-detail-3" hidden><span class="approach__applied">Applied in: guided verification and program-submission flows</span><a class="approach__case-link" href="case-study.html?project=kyc#decisions">Explore interaction decisions <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
           <div class="approach__counter" aria-hidden="true"><span data-approach-count>01</span> / 03</div>
         </div>
       </div>
@@ -203,7 +256,7 @@
     </section>
     <section class="about-intro" id="about-intro" aria-labelledby="about-heading">
       <div><div class="eyebrow">The person behind the work</div><h2 id="about-heading">Hi, I'm <em>Dipesh.</em></h2><p>I’m a product designer in Kathmandu. I turn complicated journeys into clear, useful experiences by listening closely, finding the real problem, and shaping thoughtful interfaces.</p></div>
-      <div class="toolkit" aria-labelledby="toolkit-heading"><div class="toolkit-top"><h3 id="toolkit-heading" aria-label="In my toolkit">In my <span class="tool-word" aria-hidden="true"><span class="tool-glyph tool-glyph--t"><img src="assets/tool-word.png" alt=""></span><span class="tool-glyph tool-glyph--nut"><img src="assets/tool-word.png" alt=""></span><span class="tool-glyph tool-glyph--gear"><img src="assets/tool-word.png" alt=""></span><span class="tool-glyph tool-glyph--l"><img src="assets/tool-word.png" alt=""></span>kit</span></h3><span>Design · thinking · AI</span></div><ul class="tool-list"><li><img class="tool-logo" src="assets/logo-figma.png" alt="" aria-hidden="true">Figma</li><li><img class="tool-logo" src="assets/logo-photoshop.png" alt="" aria-hidden="true">Photoshop</li><li><img class="tool-logo" src="assets/logo-framer.png" alt="" aria-hidden="true">Framer</li><li><img class="tool-logo" src="assets/logo-claude.png" alt="" aria-hidden="true">Claude</li><li><img class="tool-logo" src="assets/logo-chatgpt.png" alt="" aria-hidden="true">ChatGPT</li><li><img class="tool-logo" src="assets/logo-notion.png" alt="" aria-hidden="true">Notion</li></ul><details class="toolkit-more"><summary>Other tools to explore</summary><div class="toolkit-more-list"><span>FigJam · mapping</span><span>Maze · user testing</span><span>v0 · prototypes</span><span>Adobe Firefly · visuals</span></div></details></div>
+      <div class="toolkit" aria-labelledby="toolkit-heading"><div class="toolkit-top"><h3 id="toolkit-heading" aria-label="In my toolkit">In my <span class="tool-word" aria-hidden="true"><span class="tool-glyph tool-glyph--t"><img src="assets/tool-word.png" alt=""></span><span class="tool-glyph tool-glyph--nut"><img src="assets/tool-word.png" alt=""></span><span class="tool-glyph tool-glyph--gear"><img src="assets/tool-word.png" alt=""></span><span class="tool-glyph tool-glyph--l"><img src="assets/tool-word.png" alt=""></span>kit</span></h3><div class="toolkit-top__meta"><span>Design · thinking · AI</span><button class="tool-marquee__toggle" type="button" data-tool-toggle aria-pressed="false">Pause</button></div></div><div class="tool-marquee" data-tool-carousel role="region" aria-label="Tools I use"><div class="tool-marquee__viewport"><div class="tool-marquee__track" data-tool-track><ul class="tool-list" data-tool-set><li><img class="tool-logo" src="assets/logo-figma.png" alt="" aria-hidden="true">Figma</li><li><img class="tool-logo" src="assets/logo-photoshop.png" alt="" aria-hidden="true">Photoshop</li><li><img class="tool-logo" src="assets/logo-framer.svg" alt="" aria-hidden="true">Framer</li><li><img class="tool-logo" src="assets/logo-claude.png" alt="" aria-hidden="true">Claude</li><li><img class="tool-logo" src="assets/logo-chatgpt.png" alt="" aria-hidden="true">ChatGPT</li><li><img class="tool-logo" src="assets/logo-notion.png" alt="" aria-hidden="true">Notion</li><li><img class="tool-logo" src="assets/logo-jira.svg" alt="" aria-hidden="true">Jira</li><li><img class="tool-logo" src="assets/logo-html5.svg" alt="" aria-hidden="true">HTML</li><li><img class="tool-logo" src="assets/logo-css.svg" alt="" aria-hidden="true">CSS</li><li><img class="tool-logo" src="assets/logo-github.svg" alt="" aria-hidden="true">GitHub</li></ul></div></div></div></div>
     </section>
     <section class="behind" id="behind-canvas" aria-labelledby="behind-heading">
       <img class="behind__wave" src="assets/work-border-two.svg" alt="" aria-hidden="true">
@@ -223,18 +276,26 @@
           <article class="journey-step" data-journey-step><span class="journey-step__index">05</span><div><span class="journey-step__era">Today · product design</span><h3>Now I design full time.</h3><p>That time in support still shapes how I listen, frame problems, and make products clearer for people.</p></div></article>
         </div>
       </div>
-      <div class="off-clock"><div class="off-clock__heading"><h3>When I close Figma...</h3><p>You’ll find me at the table, on a trail, or keeping a Newari rhythm alive.</p></div><div class="image-loop" data-carousel role="region" aria-label="Looping gallery of Dipesh's interests"><div class="image-loop__top"><span>Off the clock</span><span>Little things I love / 01—03</span></div><div class="image-loop__viewport" data-loop-viewport><div class="image-loop__track" data-loop-track><div class="image-loop__set" data-loop-set>
-        <figure class="image-loop__slide hobby-tile"><small>01 / Movement</small><svg viewBox="0 0 210 145" aria-hidden="true"><path d="M18 119h176M91 115V45h28v70M89 59H25m95 0h65"/><path d="M37 49c-10-12-3-29 11-30 13-1 22 13 13 25-6 8-16 9-24 5Zm123-7 22-21m-4-3 12 12M74 89c8-13 18-13 26-3m20 0c7-10 17-9 24 1"/><circle cx="166" cy="90" r="8"/></svg><figcaption>Table tennis, one more game.</figcaption></figure>
-        <figure class="image-loop__slide hobby-tile"><small>02 / Outside</small><svg viewBox="0 0 210 145" aria-hidden="true"><path d="M13 119 67 40l35 50 27-37 67 66H13Z"/><path d="m51 64 16-24 17 24m30 8 15-19 18 19M12 119h187M143 118c5-20 13-29 26-34m-15 21 15 3"/><circle cx="166" cy="30" r="12"/></svg><figcaption>Trekking for fresh perspective.</figcaption></figure>
-        <figure class="image-loop__slide hobby-tile"><small>03 / Culture</small><svg viewBox="0 0 210 145" aria-hidden="true"><path d="M44 37c14-15 109-15 123 0l-8 70c-15 16-92 16-107 0l-8-70Z"/><ellipse cx="105" cy="38" rx="61" ry="17"/><ellipse cx="105" cy="107" rx="54" ry="15"/><path d="m65 47 17 55m23-48v55m39-61-18 55M31 87l-15 34m22-31-14 34M171 85l16 38m-23-35 15 36"/></svg><figcaption>Playing the Newari Dhime.</figcaption></figure>
-      </div></div></div><div class="image-loop__footer"><div class="image-loop__status"><span>More than pixels</span><span class="image-loop__hint">· Hover to slow</span></div><button class="image-loop__toggle" data-loop-toggle type="button" aria-pressed="false">Pause motion</button></div></div></div>
+      <div class="off-clock"><div class="off-clock__heading"><h3>When I close Figma...</h3><p>You’ll find me at the table, on a trail, or keeping a Newari rhythm alive.</p></div><div class="image-loop" data-carousel role="region" aria-label="Looping photo gallery of Dipesh's life outside design"><div class="image-loop__viewport" data-loop-viewport><div class="image-loop__track" data-loop-track><div class="image-loop__set" data-loop-set>
+        <figure class="image-loop__slide"><img src="assets/offclock/childphoto.jpg?v=2" width="1080" height="1418" alt="A childhood memory" loading="lazy"><figcaption class="sr-only">A childhood memory</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/dhime.jpg" width="552" height="828" alt="Playing the Newari Dhime" loading="lazy"><figcaption class="sr-only">The Newari Dhime</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/dhime2.jpg" width="2700" height="1800" alt="A moment with the Dhime" loading="lazy"><figcaption class="sr-only">A moment with the Dhime</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/dhime3.jpg" width="2700" height="1800" alt="Dhime music with friends" loading="lazy"><figcaption class="sr-only">Dhime music with friends</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/img_3558.jpg" width="3024" height="4032" alt="A personal moment away from work" loading="lazy"><figcaption class="sr-only">Away from work</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/tabletennise.jpg" width="3024" height="4032" alt="Playing table tennis" loading="lazy"><figcaption class="sr-only">Table tennis</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/travel.jpg" width="2268" height="4032" alt="A travel memory" loading="lazy"><figcaption class="sr-only">Travel</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/trekk1.jpg" width="1280" height="1280" alt="A trekking memory" loading="lazy"><figcaption class="sr-only">Trekking</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/trekk2.jpg" width="4032" height="3024" alt="A moment outdoors" loading="lazy"><figcaption class="sr-only">Outdoors</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/trekk3.jpg" width="3072" height="4096" alt="On a trek" loading="lazy"><figcaption class="sr-only">On a trek</figcaption></figure>
+        <figure class="image-loop__slide"><img src="assets/offclock/trekk4.jpg" width="960" height="1280" alt="A mountain view" loading="lazy"><figcaption class="sr-only">A mountain view</figcaption></figure>
+      </div></div></div><div class="image-loop__footer"><span class="image-loop__hint">Hover to slow</span><button class="image-loop__toggle" data-loop-toggle type="button" aria-pressed="false">Pause motion</button></div></div></div>
     </section>
     <section class="contact-cta" id="contact" aria-labelledby="contact-heading">
       <div class="contact-cta__copy"><span class="contact-cta__eyebrow">Your turn to say hello</span><h2 id="contact-heading">Have something <span>in mind?</span><br><em>Let's talk.</em></h2><p class="contact-cta__lead">Tell me what you're building or where the experience feels stuck. I'd love to hear about it.</p><div class="contact-cta__actions"><a class="contact-cta__primary" href="mailto:dipeshshresthaa70@gmail.com?subject=Let%27s%20talk%20about%20a%20project">Send me a message <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><button class="contact-cta__copy-button" data-copy-contact type="button">Copy email address</button></div><p class="contact-cta__email" data-contact-email>dipeshshresthaa70@gmail.com</p><span class="contact-cta__feedback" data-contact-feedback aria-live="polite"></span></div>
       <div class="contact-cta__visual"><div class="contact-cta__figure"><img src="assets/contact-waiting-level-v2.png" alt="Illustration of Dipesh looking ahead and welcoming a conversation" loading="lazy" decoding="async"><img class="contact-cta__reaction" src="assets/contact-waiting-glance-v2.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div></div>
     </section>
     </main>
-    <footer class="page-footer"><div class="page-footer__row"><nav class="page-footer__links" aria-label="Social and contact links"><a href="https://www.instagram.com/deepesh_xtha/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/dipesh-shrestha-7ab9a6277/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:dipeshshresthaa70@gmail.com">Email ↗</a></nav><a class="page-footer__top" href="#top">Back to top <span class="page-footer__top-icon" aria-hidden="true">↑</span></a></div><p class="page-footer__note">© 2026 Dipesh Shrestha <span aria-hidden="true">·</span> Made with care in Kathmandu.</p></footer>
+    <footer class="page-footer"><div class="page-footer__row"><nav class="page-footer__links" aria-label="Social and contact links"><a href="https://www.instagram.com/deepesh_xtha/" target="_blank" rel="noopener noreferrer">Instagram <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://www.linkedin.com/in/dipesh-shrestha-7ab9a6277/" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="mailto:dipeshshresthaa70@gmail.com">Email <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav><a class="page-footer__top" href="#top">Back to top <span class="page-footer__top-icon" aria-hidden="true">↑</span></a></div><p class="page-footer__note">© 2026 Dipesh Shrestha <span aria-hidden="true">·</span> Made with care in Kathmandu.</p></footer>
   </div>
   <script>
     (() => {
@@ -258,12 +319,25 @@
         const t = clamp((value - start) / (end - start));
         return t * t * (3 - 2 * t);
       };
-      let positions = [0, 108, 108];
+      const geometry = () => {
+        const width = innerWidth;
+        const step = width <= 560 ? 169 : width <= 760 ? 181 : 203;
+        const stackGap = width <= 560 ? 13 : 16;
+        return { step, stackGap };
+      };
+      let { step, stackGap } = geometry();
+      let positions = [0, step, step * 2];
+      let rotations = [-1.25, 2.4, -2.25];
+      let scales = [1, 1, 1];
       let target = [...positions];
+      let targetRotations = [...rotations];
+      let targetScales = [...scales];
       let frame = 0;
       let lastTime = 0;
       const render = () => cards.forEach((card, index) => {
-        card.style.transform = `translate3d(0,${positions[index]}%,0)`;
+        card.style.setProperty('--card-y', `${positions[index]}px`);
+        card.style.setProperty('--card-r', `${rotations[index]}deg`);
+        card.style.setProperty('--card-scale', scales[index]);
       });
       const animate = time => {
         frame = 0;
@@ -276,25 +350,47 @@
           if (Math.abs(next - target[index]) > .08) unsettled = true;
           return next;
         });
-        if (!unsettled) positions = [...target];
+        rotations = rotations.map((rotation, index) => {
+          const next = rotation + (targetRotations[index] - rotation) * blend;
+          if (Math.abs(next - targetRotations[index]) > .015) unsettled = true;
+          return next;
+        });
+        scales = scales.map((scale, index) => {
+          const next = scale + (targetScales[index] - scale) * blend;
+          if (Math.abs(next - targetScales[index]) > .001) unsettled = true;
+          return next;
+        });
+        if (!unsettled) { positions = [...target]; rotations = [...targetRotations]; scales = [...targetScales]; }
         render();
         if (unsettled) frame = requestAnimationFrame(animate);
         else lastTime = 0;
       };
       const update = () => {
         if (reducedMotion.matches) {
-          cards.forEach(card => { card.inert = false; card.removeAttribute('aria-hidden'); card.style.transform = ''; });
+          cards.forEach(card => { card.inert = false; card.removeAttribute('aria-hidden'); card.style.removeProperty('--card-y'); card.style.removeProperty('--card-r'); card.style.removeProperty('--card-scale'); });
+          return;
+        }
+        if (section.classList.contains('has-expanded')) {
+          cards.forEach(card => { card.inert = false; card.removeAttribute('aria-hidden'); });
           return;
         }
         const rect = section.getBoundingClientRect();
         const travel = Math.max(1, rect.height - innerHeight);
         const progress = clamp(-rect.top / travel);
-        target = [0, 108 * (1 - smoothstep(progress, .1, .42)), 108 * (1 - smoothstep(progress, .58, .9))];
+        ({ step, stackGap } = geometry());
+        const second = smoothstep(progress, .12, .46);
+        const third = smoothstep(progress, .55, .9);
+        const thirdResting = step * 2 + (step + stackGap - step * 2) * second;
+        target = [0, step + (stackGap - step) * second, thirdResting + (stackGap * 2 - (step + stackGap)) * third];
+        targetRotations = [-1.25 + .65 * second, 2.4 - 1.65 * second, -2.25 + 1.55 * third];
+        targetScales = [1 - .022 * second, 1 - .02 * third, 1];
         const active = progress >= .87 ? 2 : progress >= .39 ? 1 : 0;
         count.textContent = String(active + 1).padStart(2, '0');
         cards.forEach((card, index) => {
-          card.inert = index !== active;
-          card.setAttribute('aria-hidden', String(index !== active));
+          const covered = index === 0 ? second > .94 : index === 1 ? third > .94 : false;
+          card.inert = covered;
+          if (covered) card.setAttribute('aria-hidden', 'true');
+          else card.removeAttribute('aria-hidden');
         });
         if (!frame) frame = requestAnimationFrame(animate);
       };
@@ -305,9 +401,11 @@
           const expanded = button.getAttribute('aria-expanded') === 'true';
           button.setAttribute('aria-expanded', String(!expanded));
           button.setAttribute('aria-label', `${expanded ? 'Expand' : 'Collapse'} ${card.querySelector('h3').textContent}`);
-          button.textContent = expanded ? '+' : '−';
+          button.textContent = expanded ? '+' : '×';
           detail.hidden = expanded;
           card.classList.toggle('is-expanded', !expanded);
+          section.classList.toggle('has-expanded', cards.some(item => item.classList.contains('is-expanded')));
+          update();
         });
       });
       addEventListener('scroll', update, { passive: true });
@@ -315,6 +413,53 @@
       reducedMotion.addEventListener('change', update);
       render();
       update();
+    })();
+    (() => {
+      const carousel = document.querySelector('[data-tool-carousel]');
+      if (!carousel) return;
+      const track = carousel.querySelector('[data-tool-track]');
+      const original = carousel.querySelector('[data-tool-set]');
+      const toggle = document.querySelector('[data-tool-toggle]');
+      const duplicate = original.cloneNode(true);
+      duplicate.removeAttribute('data-tool-set');
+      duplicate.setAttribute('aria-hidden', 'true');
+      duplicate.querySelectorAll('img').forEach(image => { image.alt = ''; });
+      track.append(duplicate);
+
+      const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      let paused = reducedMotion.matches;
+      let hovering = false;
+      let visible = true;
+      let offset = 0;
+      let speed = 30;
+      let lastTime = 0;
+      const updateButton = () => {
+        toggle.textContent = paused ? 'Play' : 'Pause';
+        toggle.setAttribute('aria-pressed', String(paused));
+      };
+      const animate = time => {
+        const elapsed = lastTime ? Math.min(time - lastTime, 64) : 0;
+        lastTime = time;
+        if (!paused && visible && !document.hidden) {
+          const targetSpeed = hovering ? 10 : 30;
+          speed += (targetSpeed - speed) * Math.min(1, elapsed / 260);
+          const loopWidth = original.getBoundingClientRect().width;
+          if (loopWidth > 0) {
+            offset = (offset + speed * elapsed / 1000) % loopWidth;
+            track.style.transform = `translate3d(${-offset}px,0,0)`;
+          }
+        }
+        requestAnimationFrame(animate);
+      };
+      toggle.addEventListener('click', () => { paused = !paused; updateButton(); });
+      carousel.addEventListener('pointerenter', () => { hovering = true; });
+      carousel.addEventListener('pointerleave', () => { hovering = false; });
+      carousel.addEventListener('focusin', () => { hovering = true; });
+      carousel.addEventListener('focusout', () => { hovering = false; });
+      if ('IntersectionObserver' in window) new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }, { threshold: .05 }).observe(carousel);
+      reducedMotion.addEventListener('change', event => { paused = event.matches; if (paused) track.style.transform = ''; updateButton(); });
+      updateButton();
+      requestAnimationFrame(animate);
     })();
     (() => {
       const gallery = document.querySelector('[data-carousel]');
