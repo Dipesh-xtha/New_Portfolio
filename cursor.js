@@ -116,7 +116,7 @@
   cursor.setAttribute('aria-hidden', 'true');
   cursor.dataset.mode = 'dog';
   cursor.dataset.dog = 'default';
-  cursor.innerHTML = `<span class="ink-cursor__dot"></span><span class="ink-cursor__dog">${dogStates.map(state => `<img class="ink-cursor__dog-image" data-dog-image="${state}" src="${dogSources[state]}" alt="" draggable="false">`).join('')}</span><img class="ink-cursor__carousel-character" src="assets/cursor-dog-heart-glasses.png" alt="" draggable="false"><span class="ink-cursor__intro">Yo, I’m Dipesh Shrestha</span>`;
+  cursor.innerHTML = `<span class="ink-cursor__dot"></span><span class="ink-cursor__dog">${dogStates.map(state => `<img class="ink-cursor__dog-image" data-dog-image="${state}" src="${dogSources[state]}" alt="" draggable="false">`).join('')}</span><img class="ink-cursor__carousel-character" src="assets/cursor-dog-heart-glasses.webp" alt="" draggable="false"><span class="ink-cursor__intro">Yo, I’m Dipesh Shrestha</span>`;
   document.body.append(cursor);
   dot = cursor.querySelector('.ink-cursor__dot');
   dog = cursor.querySelector('.ink-cursor__dog');
