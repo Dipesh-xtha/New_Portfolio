@@ -4,7 +4,8 @@
   const root = document.documentElement;
   const portrait = document.querySelector('.hero__portrait');
   const dogStates = ['default', 'hover', 'click', 'idle'];
-  const dogSources = Object.fromEntries(dogStates.map(state => [state, `assets/cursor-dog-${state}.png`]));
+  const dogSources = Object.fromEntries(dogStates.map(state => [state, `assets/cursor-dog-${state}.webp`]));
+  const dogHeights = { default: 233, hover: 234, click: 234, idle: 234 };
   const portraitAlpha = document.createElement('canvas');
   const portraitContext = portraitAlpha.getContext('2d', { willReadFrequently: true });
   let portraitReady = false;
@@ -116,7 +117,7 @@
   cursor.setAttribute('aria-hidden', 'true');
   cursor.dataset.mode = 'dog';
   cursor.dataset.dog = 'default';
-  cursor.innerHTML = `<span class="ink-cursor__dot"></span><span class="ink-cursor__dog">${dogStates.map(state => `<img class="ink-cursor__dog-image" data-dog-image="${state}" src="${dogSources[state]}" alt="" draggable="false">`).join('')}</span><img class="ink-cursor__carousel-character" src="assets/cursor-dog-heart-glasses.webp" alt="" draggable="false"><span class="ink-cursor__intro">Yo, I’m Dipesh Shrestha</span>`;
+  cursor.innerHTML = `<span class="ink-cursor__dot"></span><span class="ink-cursor__dog">${dogStates.map(state => `<img class="ink-cursor__dog-image" data-dog-image="${state}" src="${dogSources[state]}" width="256" height="${dogHeights[state]}" alt="" draggable="false">`).join('')}</span><img class="ink-cursor__carousel-character" src="assets/cursor-dog-heart-glasses.webp" width="256" height="214" alt="" draggable="false"><span class="ink-cursor__intro">Yo, I’m Dipesh Shrestha</span>`;
   document.body.append(cursor);
   dot = cursor.querySelector('.ink-cursor__dot');
   dog = cursor.querySelector('.ink-cursor__dog');

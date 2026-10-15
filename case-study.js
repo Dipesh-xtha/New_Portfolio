@@ -1,6 +1,8 @@
 const arrow = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const asset = (n) => 'assets/' + n;
-const shot = (name, title, detail = '', wide = false) => `<figure class="shot${wide ? ' shot--wide' : ''}"><img src="${asset(name)}" alt="${title}" loading="lazy"><figcaption><strong>${title}</strong>${detail}</figcaption></figure>`;
+const imageSizes = {"case-0-imgChatGptImageAug62026020838Pm1.webp":[1536,1024],"case-0-imgImage1.webp":[1438,989],"case-0-imgImage48.webp":[1264,601],"case-0-imgImage49.webp":[1276,611],"case-0-imgImage51.webp":[1276,623],"case-0-imgImage52.webp":[1276,629],"case-0-imgImage53.webp":[1259,608],"case-0-imgImage54.webp":[1239,582],"case-0-imgImage55.webp":[1187,575],"case-1-imgImage57.webp":[1440,1069],"case-1-imgImage58.webp":[1440,1599],"case-1-imgImage59.webp":[1073,1800],"case-1-imgImage60.webp":[901,1800],"case-1-imgImageOldBugVKycPageShowingALongSinglePageForm.webp":[1484,1646],"case-2-imgImage10.webp":[1433,987],"case-2-imgImage11.webp":[735,470],"case-2-imgImage13.webp":[1258,550],"case-2-imgImage14.webp":[1800,1325],"case-2-imgImage15.webp":[1436,937],"case-2-imgImage4.webp":[1284,1800],"case-2-imgImage5.webp":[1575,1800],"case-2-imgImage6.webp":[1800,1201],"case-2-imgImage7.webp":[1312,1800],"case-2-imgImage8.webp":[902,1800],"case-2-imgImage9.webp":[866,1800],"case-2-imgMockups1.webp":[1536,1024],"work-kyc-foreground.webp":[1400,1149]};
+const imageDimensions = (name) => { const size = imageSizes[name]; return size ? ` width="${size[0]}" height="${size[1]}"` : ''; };
+const shot = (name, title, detail = '', wide = false) => `<figure class="shot${wide ? ' shot--wide' : ''}"><img src="${asset(name)}" alt="${title}"${imageDimensions(name)} loading="lazy" decoding="async"><figcaption><strong>${title}</strong>${detail}</figcaption></figure>`;
 const section = (id, number, label, title, body) => `<section class="case-section" id="${id}" aria-labelledby="${id}-heading"><div class="section-kicker">${number} / ${label}</div><h2 id="${id}-heading">${title}</h2>${body}</section>`;
 const facts = (items) => `<div class="fact-grid">${items.map(([label, value]) => `<div class="fact"><small>${label}</small><strong>${value}</strong></div>`).join('')}</div>`;
 const decisions = (items) => `<div class="decision-grid">${items.map(([title, description], i) => `<div class="decision"><small>Decision ${String(i + 1).padStart(2, '0')}</small><h3>${title}</h3><p>${description}</p></div>`).join('')}</div>`;
@@ -11,7 +13,7 @@ const projects = {
     index: '01', eyebrow: 'Selected work · Cybersecurity platform', title: 'Bugv B2B <em>Website Redesign.</em>',
     lead: "Making Bugv’s security offerings easier for organizations to understand and explore, while keeping a distinct path for researchers.",
     tags: ['UI/UX · Product Designer', 'B2B SaaS', 'Website redesign'],
-    hero: 'case-0-imgChatGptImageAug62026020838Pm1.png',
+    hero: 'case-0-imgChatGptImageAug62026020838Pm1.webp',
     heroAlt: 'Bugv website redesign presented on a laptop',
     next: 'kyc',
     sections: [
@@ -38,19 +40,19 @@ const projects = {
           ['Build trust without overclaiming','Process and credibility content support evaluation. Any public proof or product claim needs verification before publication.'],
           ['Make the next action clear','Contact actions sit near relevant explanations. Pricing uses “Request pricing” rather than unverified prices.'],
           ['Keep a visible researcher path','Researchers have a route that does not interrupt the organization’s product evaluation journey.']
-        ]) + '<div class="screen-grid">' + shot('case-0-imgImage48.png','Product choice section','A focused introduction to distinct security offerings.') + shot('case-0-imgImage49.png','Audience navigation','Separate paths for buyers and researchers.') + '</div>'),
+        ]) + '<div class="screen-grid">' + shot('case-0-imgImage48.webp','Product choice section','A focused introduction to distinct security offerings.') + shot('case-0-imgImage49.webp','Audience navigation','Separate paths for buyers and researchers.') + '</div>'),
       section('screens','06','Design direction','The page-by-page experience.',
         '<p class="intro">The Figma case study defines six intended pages. These selected design crops show the direction; final exports and handoff confirmation are still needed.</p><div class="screen-grid">' +
-        shot('case-0-imgImage1.png','Homepage','Introduces the platform, product choices, trust cues, and next step.') +
-        shot('case-0-imgImage53.png','Bug Bounty','Explains the program model and its fit for an organization.') +
-        shot('case-0-imgImage54.png','PTaaS','Shows the structured testing journey and what the service includes.') +
-        shot('case-0-imgImage55.png','VDP','Explains a channel for receiving vulnerability reports.') +
-        shot('case-0-imgImage52.png','Researcher page','A dedicated route and relevant reasons to participate.') +
+        shot('case-0-imgImage1.webp','Homepage','Introduces the platform, product choices, trust cues, and next step.') +
+        shot('case-0-imgImage53.webp','Bug Bounty','Explains the program model and its fit for an organization.') +
+        shot('case-0-imgImage54.webp','PTaaS','Shows the structured testing journey and what the service includes.') +
+        shot('case-0-imgImage55.webp','VDP','Explains a channel for receiving vulnerability reports.') +
+        shot('case-0-imgImage52.webp','Researcher page','A dedicated route and relevant reasons to participate.') +
         '</div><div class="route"><h3>Pricing</h3><p>Four plans with contact actions and no displayed prices.</p></div>'),
       section('pricing','07','Pricing decision','A conversation-led pricing page.',
         '<p class="intro">The design direction is four plans, each with a “Request pricing” action and no displayed price. The older three-tier and $100/month proposals in the research document do not represent this design.</p>' +
         facts([['04','Plans to compare'],['Each plan','Request pricing'],['Displayed prices','None'],['To verify','Final plan names, features, and copy']]) +
-        shot('case-0-imgImage51.png','Pricing exploration','A plan comparison concept from the Figma file.',true)),
+        shot('case-0-imgImage51.webp','Pricing exploration','A plan comparison concept from the Figma file.',true)),
       section('reflection','08','Outcome & reflection','What the work establishes — and what needs proof.',
         '<p class="intro">The case study documents the design rationale and intended pages. Final exports and handoff confirmation are needed before claiming completed deliverables or implementation.</p>' +
         facts([['Design output','A connected B2B journey across offerings, researcher access, and pricing.'],['After launch, measure','Homepage-to-product movement, product-to-contact clicks, pricing inquiries, and researcher-route engagement.'],['Next iteration','Test whether buyers can distinguish Bug Bounty, PTaaS, and VDP, find the next step, and recognize the researcher path.']]))
@@ -60,7 +62,7 @@ const projects = {
     index: '02', eyebrow: 'Product design case study · Bugv', title: 'Making identity verification <em>clear, recoverable and trustworthy.</em>',
     lead: 'I redesigned Bugv’s single-page KYC form into a guided four-step journey with visible progress, clearer document requirements, review states and targeted correction.',
     tags: ['UI/UX · Product Design', 'End-to-end KYC flow', 'Responsive web'],
-    hero: 'work-kyc-foreground.png',
+    hero: 'work-kyc-foreground.webp',
     heroAlt: 'Bugv KYC redesign with guided verification steps',
     next: 'product',
     sections: [
@@ -70,7 +72,7 @@ const projects = {
         '<p class="design-note">Project duration and launch status need confirmation before publishing a timeline or business impact.</p>'),
       section('problem','02','The problem','The old experience looked like a profile form, not a verification journey.',
         '<p class="intro">Everything happened on one long page: identity details, contact information, uploads, processing messages and submission actions. The interface did not clearly communicate sequence, status or recovery.</p>' +
-        shot('case-1-imgImageOldBugVKycPageShowingALongSinglePageForm.png','Before · supplied product screen','A dense form with conflicting Save, Submit and processing cues.',true) +
+        shot('case-1-imgImageOldBugVKycPageShowingALongSinglePageForm.webp','Before · supplied product screen','A dense form with conflicting Save, Submit and processing cues.',true) +
         decisions([['No visible sequence','A long page made the task feel heavier and gave users no sense of progress.'],['Generic document request','“Upload document file” did not explain which evidence was accepted or how to prepare it.'],['Conflicting actions and status','Save, Submit and Under process competed without a clear primary next step.'],['No recovery route','The interface did not show what happens if only one document cannot be verified.']]) +
         '<div class="quote-panel"><p>How might we turn KYC from a dense administrative form into a clear journey that prevents errors and helps users recover?</p></div>'),
       section('journey','03','Information architecture','A four-step journey, followed by meaningful status.',
@@ -87,10 +89,10 @@ const projects = {
         states([['Not started','Explain what is required before the user begins.'],['In progress','Preserve work and show the next unfinished step.'],['Under review','Confirm receipt and avoid duplicate submission.'],['Verified','Confirm completion and unlock the next action.'],['Action required','Name the issue and route to the affected section.'],['Re-verification','Confirm corrected evidence has returned to review.']])),
       section('screens','06','Final designs','The complete interface story.',
         '<p class="intro">The Figma file shows the key screens for the redesigned journey. They are presented here as design screens; implementation and outcome claims still need confirmation.</p><div class="screen-grid">' +
-        shot('case-1-imgImage57.png','Entry & orientation','Sets expectations and explains the work ahead.') +
-        shot('case-1-imgImage58.png','Guided evidence collection','Turns requirements into focused, manageable actions.') +
-        shot('case-1-imgImage60.png','Review & submission','Lets users check their data and understand what happens next.') +
-        shot('case-1-imgImage59.png','Correction & recovery','Provides specific feedback without forcing a full restart.') +
+        shot('case-1-imgImage57.webp','Entry & orientation','Sets expectations and explains the work ahead.') +
+        shot('case-1-imgImage58.webp','Guided evidence collection','Turns requirements into focused, manageable actions.') +
+        shot('case-1-imgImage60.webp','Review & submission','Lets users check their data and understand what happens next.') +
+        shot('case-1-imgImage59.webp','Correction & recovery','Provides specific feedback without forcing a full restart.') +
         '</div>'),
       section('reflection','07','Outcome & reflection','A complete design system for verification.',
         '<p class="intro">The design deliverable covers initial verification, progress, document submission, review, verification status, correction requests and resubmission. Launch, handoff and measured business impact should only be added when confirmed.</p>' +
@@ -102,32 +104,32 @@ const projects = {
     index: '03', eyebrow: 'Additional product work · Bugv', title: 'Selected <em>product interfaces.</em>',
     lead: 'A concise view of dashboards, program submission, data-heavy tables and integration workflows designed for Bugv’s B2B platform.',
     tags: ['B2B SaaS', 'Admin workflows', 'Operational UI'],
-    hero: 'case-2-imgMockups1.png',
+    hero: 'case-2-imgMockups1.webp',
     heroAlt: 'Selected Bugv product interface mockups',
     next: 'website',
     sections: [
       section('dashboards','01','Dashboards','Operational clarity at a glance.',
         '<p class="intro">Priority, SLA, program health and platform operations—organized for fast decisions.</p><div class="screen-grid">' +
-        shot('case-2-imgImage6.png','Organization dashboard','Priority · SLA · Program health',true) +
-        shot('case-2-imgImage5.png','Super Admin overview','Platform operations') +
-        shot('case-2-imgImage4.png','Program health','Trends · Performance') +
+        shot('case-2-imgImage6.webp','Organization dashboard','Priority · SLA · Program health',true) +
+        shot('case-2-imgImage5.webp','Super Admin overview','Platform operations') +
+        shot('case-2-imgImage4.webp','Program health','Trends · Performance') +
         '</div>'),
       section('submission','02','Program submission flow','From setup to program submission.',
         '<p class="intro">A connected sequence for defining the program, adding scope, configuring rewards, and submitting for review.</p><div class="flow-steps"><div class="flow-step"><strong>01</strong><span>Basics</span></div><div class="flow-step"><strong>02</strong><span>Scope</span></div><div class="flow-step"><strong>03</strong><span>Rewards</span></div><div class="flow-step"><strong>04</strong><span>Review</span></div></div><div class="screen-grid">' +
-        shot('case-2-imgImage7.png','Program basics','Step 01') +
-        shot('case-2-imgImage8.png','Scope & assets','Step 02') +
-        shot('case-2-imgImage9.png','Rewards & policy','Step 03') +
-        shot('case-2-imgImage10.png','Review & submit','Step 04') +
+        shot('case-2-imgImage7.webp','Program basics','Step 01') +
+        shot('case-2-imgImage8.webp','Scope & assets','Step 02') +
+        shot('case-2-imgImage9.webp','Rewards & policy','Step 03') +
+        shot('case-2-imgImage10.webp','Review & submit','Step 04') +
         '</div>'),
       section('tables','03','Data tables','Dense information, easy to act on.',
         '<p class="intro">Compact tables keep status, dates, amounts, filters and actions visible without pushing detail into every row.</p><div class="screen-grid">' +
-        shot('case-2-imgImage11.png','Billing & invoices','Invoice · Billing period · Amount · Due date · Status') +
-        shot('case-2-imgImage13.png','Payments & reconciliation','Method · Reference · Submitted date · Verification status') +
+        shot('case-2-imgImage11.webp','Billing & invoices','Invoice · Billing period · Amount · Due date · Status') +
+        shot('case-2-imgImage13.webp','Payments & reconciliation','Method · Reference · Submitted date · Verification status') +
         '</div>'),
       section('integrations','04','Integration flow','Connect once, stay inside the workflow.',
         '<p class="intro">A short path from selecting an integration to configuring access and confirming the connection.</p><div class="flow-steps"><div class="flow-step"><strong>01</strong><span>Choose</span></div><div class="flow-step"><strong>02</strong><span>Configure</span></div><div class="flow-step"><strong>03</strong><span>Verify</span></div></div><div class="screen-grid">' +
-        shot('case-2-imgImage14.png','Integration library','Choose the service to connect.') +
-        shot('case-2-imgImage15.png','Configuration','Permissions, workspace and connection details.') +
+        shot('case-2-imgImage14.webp','Integration library','Choose the service to connect.') +
+        shot('case-2-imgImage15.webp','Configuration','Permissions, workspace and connection details.') +
         '</div>')
     ]
   }
@@ -146,7 +148,7 @@ document.querySelector('main').innerHTML = `
   <div class="case-shell">
     <a class="back-link" href="index.html#work"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7M7 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to work gallery</a>
     <header class="case-hero"><div class="eyebrow">${project.eyebrow} · ${project.index} / 03</div><h1>${project.title}</h1><p>${project.lead}</p><div class="meta">${project.tags.map(tag => `<span>${tag}</span>`).join('')}</div></header>
-    <figure class="hero-media"><img src="${asset(project.hero)}" alt="${project.heroAlt}"><figcaption>Bugv · selected design work by Dipesh Shrestha</figcaption></figure>
+    <figure class="hero-media"><img src="${asset(project.hero)}" alt="${project.heroAlt}"${imageDimensions(project.hero)} decoding="async"><figcaption>Bugv · selected design work by Dipesh Shrestha</figcaption></figure>
     <div class="case-layout"><aside class="case-toc" aria-label="Case study contents"><strong>In this story</strong>${nav}</aside><div class="case-flow">${project.sections.join('')}<a class="next-project" href="case-study.html?project=${project.next}"><span><small>Next project</small><strong>${next.title.replace(/<[^>]*>/g, '')}</strong></span>${arrow}</a></div></div>
   </div>`;
 if (location.hash) {
