@@ -1,30 +1,20 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8eee5">
-  <title>Case study — Dipesh Shrestha</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700;800&amp;family=Young+Serif&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700;800&amp;family=Young+Serif&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="case-study.css?v=20261014d">
-  <link rel="stylesheet" href="cursor.css?v=20261014d">
-  <script src="case-study.js?v=20261014d" defer></script>
-  <script src="cursor.js?v=20261014d" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#case-content">Skip to case study</a>
-  <header class="site-header">
-    <a class="brand" href="index.html#top" aria-label="Dipesh Shrestha, back to portfolio"><img src="assets/nav-logo.webp" alt="Dipesh Shrestha" width="577" height="223"></a>
-    <nav aria-label="Main navigation">
-      <a href="index.html#work">Work gallery</a>
-      <a href="index.html#approach">Approach</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
-  <main id="case-content"></main>
-  <footer class="site-footer"><a href="index.html#work" class="back-link">Back to work gallery <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7M7 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span>© 2026 Dipesh Shrestha · Made with care in Kathmandu.</span></footer>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Opening case study | Dipesh Shrestha</title>
+    <script>
+      const key = new URLSearchParams(location.search).get('project');
+      const project = ['website', 'kyc', 'product'].includes(key) ? key : 'website';
+      location.replace('/case-study/' + project + '/' + location.hash);
+    </script>
+  </head>
+  <body>
+    <p>Opening your case study…</p>
+    <a href="/case-study/website/">Website redesign</a>
+    <a href="/case-study/kyc/">KYC verification</a>
+    <a href="/case-study/product/">Product interfaces</a>
+  </body>
 </html>

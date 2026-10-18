@@ -1,3 +1,10 @@
 /*.png
+!/favicon.png
 /reference-site.html
 /unused-preview-assets/
+**/node_modules/
+**/.next/
+**/out/
+.env*
+*.pem
+*.log

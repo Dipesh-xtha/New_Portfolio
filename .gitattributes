@@ -1,0 +1,6 @@
+# Keep compiled bundles byte-for-byte and omit generated minified code from diffs.
+/_next/** -text -diff -whitespace
+/fonts/** -whitespace
+/nextjs/public/fonts/** -whitespace
+# Existing stylesheet spacing does not affect the compiled site.
+/nextjs/app/*.css whitespace=-blank-at-eof

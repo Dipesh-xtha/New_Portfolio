@@ -1,0 +1,32 @@
+{
+  "name": "portfolio-nextjs",
+  "version": "1.0.0",
+  "description": "Dipesh Shrestha portfolio \u2014 local Next.js migration",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node scripts/preview.mjs",
+    "verify": "node scripts/verify-export.mjs",
+    "publish:files": "node scripts/publish-export.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dipesh-xtha/New_Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dipesh-xtha/New_Portfolio/issues"
+  },
+  "homepage": "https://github.com/Dipesh-xtha/New_Portfolio#readme",
+  "dependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

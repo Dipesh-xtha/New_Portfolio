@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Opening case study | Dipesh Shrestha</title>
+    <script>
+      const key = new URLSearchParams(location.search).get('project');
+      const project = ['website', 'kyc', 'product'].includes(key) ? key : 'website';
+      location.replace('/case-study/' + project + '/' + location.hash);
+    </script>
+  </head>
+  <body>
+    <p>Opening your case study…</p>
+    <a href="/case-study/website/">Website redesign</a>
+    <a href="/case-study/kyc/">KYC verification</a>
+    <a href="/case-study/product/">Product interfaces</a>
+  </body>
+</html>

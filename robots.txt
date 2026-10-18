@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://dipeshshrestha69.com.np/sitemap.xml
